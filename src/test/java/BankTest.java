@@ -20,7 +20,7 @@ class BankTest {
 User user=mock(User.class);
 @InjectMocks
 private Bank bank=new Bank();
-    @Before
+    @BeforeEach
     public void setup() {
         bank.setUser(user);
         bank.setBalance(200);
@@ -33,11 +33,11 @@ private Bank bank=new Bank();
 
     @Test
     void setBalance() {
+
         assertEquals(200,bank.getBalance());
     }
 
     @Test
-    @Disabled("not implemented")
     void deposit() {
         bank.deposit(100);
         assertEquals(300,bank.getBalance());
